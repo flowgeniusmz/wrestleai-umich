@@ -8,4 +8,4 @@ textColor="#f9f9f9"
 maxUploadSize=1028
 
 [client]
-showSidebarNavigation = true
+showSidebarNavigation = false
