@@ -17,11 +17,15 @@ with background_container:
             stylecontainer = ps.container_styled3(varKey="dakl")
             with stylecontainer:
                 summary_container = st.container(border=False, height=200)
+                with summary_container:
+                    df111 = st.dataframe(st.session_state.df_team, use_container_width=True)
             stylecontainer1 = ps.container_styled3(varKey="dak111l")
             with stylecontainer1:
                 detail_container = st.container(border=True, height=500)
                 with detail_container:
                     detail_tabs = st.tabs(tabs=st.secrets.tabconfig.wrestler_data)
+                    with detail_tabs[0]:
+                        df_roster = st.dataframe(st.session_state.df_team_roster, use_container_width=True)
         with section_tabs[1]:
             stylecontainer12 = ps.container_styled3(varKey="dakl21212")
             with stylecontainer12:

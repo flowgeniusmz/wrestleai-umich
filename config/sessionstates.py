@@ -1,5 +1,5 @@
 import streamlit as st
-from classes.class_datascraper import TeamRosterScraper, TeamScraper, WrestlerRankingsScraper
+from classes import class_rankings, class_teamseasons, class_roster
 
 def initialize_session_states():
     if "chat_messages" not in st.session_state:
@@ -8,9 +8,9 @@ def initialize_session_states():
     
     if "scraper_data_loaded" not in st.session_state:
         st.session_state.scraper_data_loaded = False
-        st.session_state.team_roster_scraper = TeamRosterScraper()
-        st.session_state.team_scraper = TeamScraper()
-        st.session_state.ranking_scraper = WrestlerRankingsScraper()
+        st.session_state.team_roster_scraper = class_roster.TeamRosterScraper()
+        st.session_state.team_scraper = class_teamseasons.TeamScraper()
+        st.session_state.ranking_scraper = class_rankings.WrestlerRankingsScraper()
         st.session_state.df_team_roster = st.session_state.team_roster_scraper.scrape()
         st.session_state.df_team = st.session_state.team_scraper.scrape()
         st.session_state.df_rankings = st.session_state.ranking_scraper.scrape()
