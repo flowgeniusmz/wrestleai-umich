@@ -371,7 +371,7 @@ def container_styled3(varKey):
         key=varKey,
         css_styles="""
         {
-            border: 2px solid rgba(0, 0, 0, 0.2); /* Changed border color to a subtle grey */
+            border: 2px solid rgba(40, 94, 159, 0.75); /* Changed border color to a subtle grey */
             background-color: rgba(255, 255, 255, 0.75); /* Adjusted transparency for better visibility */
             border-radius: 0.5rem;
             padding: 1em; /* Added padding for better spacing */
