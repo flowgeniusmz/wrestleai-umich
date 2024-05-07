@@ -39,7 +39,7 @@ if video_file_buffer is not None:
         'Select Frame Range',
         0, total_frames - 1,
         st.session_state.frame_range,
-        key='frame_range'
+        key='_frame_range'
     )
 
     # Display selected frame range and surrounding frames

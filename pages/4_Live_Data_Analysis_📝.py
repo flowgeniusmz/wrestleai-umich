@@ -1,5 +1,6 @@
 import streamlit as st
 from config import pagesetup as ps, sessionstates as ss
+import app1, app2
 
 
 # 0. Set page config
@@ -35,3 +36,15 @@ with background_container:
                 dataframe_container = st.container(border=True)
                 with dataframe_container:
                     df_rankings = st.dataframe(st.session_state.df_rankings, use_container_width=True, hide_index=True)
+        with section_tabs[2]:
+            stylecontainer32432 = ps.container_styled3(varKey="dafdfdsfdsd")
+            with stylecontainer32432:
+                concontainer = st.container()
+                with concontainer:
+                    app1.show()
+        with section_tabs[3]:
+            styledafdafd = ps.container_styled3(varKey="asfgsdfg")
+            with styledafdafd:
+                dfadsf = st.container()
+                with dfadsf:
+                    app2.app2()
