@@ -272,7 +272,7 @@ def get_pageconfig_title_with_popmenu(varPageNumber: int, varDiv: bool=True):
         with headercols[0]:
             title = get_pageconfig_item(varPageNumber=varPageNumber, varPageConfigType="titles")
             subtitle = get_pageconfig_item(varPageNumber=varPageNumber, varPageConfigType="subtitles")
-            st.markdown(f"""<span style="font-weight: bold; font-size: 2em; color:#4A90E2;">{title} </span> <span style="font-weight: bold; color:#333333; font-size:1.3em;">{subtitle}</span>""", unsafe_allow_html=True)
+            st.markdown(f"""<span style="font-weight: bold; font-size: 2em; color:#4A90E2;">{title} </span> <span style="font-weight: bold; color:#FFFFFF; font-size:1.3em;">{subtitle}</span>""", unsafe_allow_html=True)
         with headercols[1]:
             menu = popover_menu(varPageNumber=varPageNumber)
         if varDiv:

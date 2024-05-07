@@ -1,4 +1,7 @@
 import streamlit as st
+from config import sessionstates as ss
+
+ss.initialize_session_states()
 
 st.title("WrestleAI")
 a = st.button("click")
