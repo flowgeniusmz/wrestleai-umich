@@ -17,3 +17,7 @@ temp
 opencv-python-headless
 ipython
 pillow
+numpy
+pytube
+pydub
+youtube-transcript-api
