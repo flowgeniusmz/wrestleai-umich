@@ -21,3 +21,4 @@ numpy
 pytube
 pydub
 youtube-transcript-api
+moviepy

@@ -1,5 +1,6 @@
 import streamlit as st
-from classes import class_rankings, class_teamseasons, class_roster
+from assistants import chat_class, vision_class
+from working.classes import class_rankings, class_roster, class_teamseasons
 
 def initialize_session_states():
     if "chat_messages" not in st.session_state:
@@ -15,4 +16,8 @@ def initialize_session_states():
         st.session_state.df_team = st.session_state.team_scraper.scrape()
         st.session_state.df_rankings = st.session_state.ranking_scraper.scrape()
         st.session_state.scraper_data_loaded = True
+
+    if "vision_assistant" not in st.session_state:
+        st.session_state.vision_assistant = chat_class.chat_assistant()
+        
 

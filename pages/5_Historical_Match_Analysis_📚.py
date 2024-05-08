@@ -1,5 +1,6 @@
 import streamlit as st
 from config import pagesetup as ps, sessionstates as ss
+from assistants import vision_class
 
 
 # 0. Set page config
@@ -8,3 +9,4 @@ page = 4
 ps.master_page_display_styled_popmenu_pop(varPageNumber=page)
 
 #
+vision_class.main()
