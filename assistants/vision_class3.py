@@ -5,6 +5,7 @@ import numpy as np
 import tempfile
 import shutil
 from openai import OpenAI
+import os
 
 class VideoAnalyzer:
     def __init__(self, api_key):
@@ -39,7 +40,7 @@ class VideoAnalyzer:
             "image": {"image": base64_frame, "resize": 768}
         }]
         params = {
-            "model": "gpt-4-turbo",
+            "model": "gpt-4-vision-preview",
             "messages": prompt_messages,
             "max_tokens": 200,
         }
@@ -68,7 +69,9 @@ def main():
         else:
             st.error("Failed to extract frame. Please try another frame.")
 
-        
+        # Cleanup: remove the temporary file
+        if tmpfile_path:
+            os.remove(tmpfile_path)
 
 if __name__ == "__main__":
     main()

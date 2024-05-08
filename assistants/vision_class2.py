@@ -40,7 +40,7 @@ class VideoAnalyzer:
             },
         ]
         params = {
-            "model": "gpt-4-turbo",
+            "model": "gpt-4-vision-preview",
             "messages": prompt_messages,
             "max_tokens": 200,
         }
