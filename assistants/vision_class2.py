@@ -35,10 +35,21 @@ class VideoAnalyzer:
         prompt_messages = [
             {
                 "role": "user",
-                "content": "This is a frame from a video. Generate a compelling description for it.",
-                "image": {"image": base64_frame, "resize": 768}
-            },
+                "content": [
+                    {
+                    "type": "text",
+                    "text": "This is a frame from a video. Generate a compelling description for it."
+                    },
+                    {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:impage/jpg;base64,{base64_frame}"
+                    }
+                    }
+                ]
+            }
         ]
+
         params = {
             "model": "gpt-4-vision-preview",
             "messages": prompt_messages,
