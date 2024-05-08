@@ -3,16 +3,21 @@ import cv2
 import base64
 import numpy as np
 from openai import OpenAI
+import shutil
+import tempfile
 
 class VideoAnalyzer:
     def __init__(self, api_key):
         self.client = OpenAI(api_key=api_key)
 
     def read_video(self, video_file):
+        # Save the uploaded file to a temporary location
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.mp4') as tmpfile:
+            shutil.copyfileobj(video_file, tmpfile)
+            tmpfile_path = tmpfile.name
+        
         # Convert the uploaded file to a cv2.VideoCapture object
-        video_bytes = video_file.read()
-        video_array = np.frombuffer(video_bytes, np.uint8)
-        video = cv2.VideoCapture(video_array)
+        video = cv2.VideoCapture(tmpfile_path)
         return video
 
     def extract_frames(self, video, start_frame, end_frame):
