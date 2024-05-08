@@ -30,7 +30,7 @@ class VideoAnalyzer:
 
     def generate_description(self, frame):
         # Generate a description of the single frame
-        _, buffer = cv2.imencode('.jpg', frame)
+        _, buffer = cv2.imencode('.jpeg', frame)
         base64_frame = base64.b64encode(buffer).decode('utf-8')
         prompt_messages = [
             {
@@ -43,7 +43,7 @@ class VideoAnalyzer:
                     {
                     "type": "image_url",
                     "image_url": {
-                        "url": f"data:impage/jpg;base64,{base64_frame}"
+                        "url": f"data:impage/jpeg;base64,{base64_frame}"
                     }
                     }
                 ]
