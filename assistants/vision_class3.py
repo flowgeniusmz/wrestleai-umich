@@ -68,9 +68,7 @@ def main():
         else:
             st.error("Failed to extract frame. Please try another frame.")
 
-        # Cleanup: remove the temporary file
-        if tmpfile_path:
-            os.remove(tmpfile_path)
+        
 
 if __name__ == "__main__":
     main()
