@@ -22,3 +22,4 @@ pytube
 pydub
 youtube-transcript-api
 moviepy
+youtube_dl
