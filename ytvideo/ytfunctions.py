@@ -3,6 +3,7 @@ import pandas as pd
 from pytube import YouTube, extract
 from pydub import AudioSegment
 from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_dl import YoutubeDL
 
 audio_path = st.secrets.pathconfig.ytaudio
 video_path = st.secrets.pathconfig.ytvideo
